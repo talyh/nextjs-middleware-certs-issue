@@ -6,7 +6,7 @@ const createCertificate = require("./createCertificate");
 const port = parseInt(process.env.PORT, 10) || 3000;
 const hostname = process.env.HOSTNAME || "dev.mycustomdomain.com";
 
-const nextApp = next({ dev: true });
+const nextApp = next({ dev: true, hostname, port });
 const nextHandler = nextApp.getRequestHandler();
 
 async function run() {
